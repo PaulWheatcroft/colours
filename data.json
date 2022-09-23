@@ -1,0 +1,52 @@
+[
+	{
+		"id": 1,
+        "color": "AntiqueWhite",
+		"value": "#FAEBD7"
+	},
+	{
+        "id": 2,
+		"color": "LightSlateGray",
+		"value": "#778899"
+	},
+	{
+        "id": 3,
+		"color": "CornflowerBlue",
+		"value": "#6495ED"
+	},
+	{
+        "id": 4,
+		"color": "Orchid",
+		"value": "#DA70D6"
+	},
+	{
+        "id": 5,
+		"color": "Gold",
+		"value": "#FFD700"
+	},
+	{
+        "id": 6,
+		"color": "DarkOrange",
+		"value": "#FF8C00"
+	},
+	{
+        "id": 7,
+		"color": "SaddleBrown",
+		"value": "#8B4513"
+	},
+    {
+        "id": 8,
+		"color": "HotPink",
+		"value": "#FF69B4"
+	},
+	{
+        "id": 9,
+		"color": "PeachPuff",
+		"value": "#FFDAB9"
+	},
+	{
+        "id": 10,
+		"color": "MediumTurquoise",
+		"value": "#48D1CC"
+	}
+]
