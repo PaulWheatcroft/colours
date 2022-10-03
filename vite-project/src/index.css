@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
+.alfa {
+  font-family: 'Alfa Slab One', cursive;
+}
+
+.syne {
+  font-family: 'Syne Mono', monospace;
+}
+
 .colours-container {
   width: 80%;
   margin-left: 9%;
@@ -17,5 +28,23 @@
   padding: 0 20px 5px 20px;
   border-radius: 5px;
   box-shadow: 2px 2px 2px gray;
+}
+
+.selectedLocation {
+  padding: 10px;
+  background-color: PaleGreen;
+  border-radius: 50%;
+  margin-left: 20px;
+  border-color: LightGreen;
+  color: darkgreen;
+}
+
+.location {
+  padding: 10px;
+  background-color: darkgrey;
+  border-radius: 50%;
+  margin-left: 20px;
+  border-color: LightGray;
+  color: lightgray;
 }
 
