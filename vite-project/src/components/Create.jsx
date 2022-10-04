@@ -1,9 +1,10 @@
-import { useState } from "react";
-import data from '../../../data'
+import { useState, useEffect } from "react";
+import data from '../../../data';
+import 'regenerator-runtime/runtime';
+import axios from 'axios';
 
 const Create = (props) => {
-    const [formData, setFormData] = useState(
-        {color: "", value: "", id: `${data.length + 1}`}
+    const [formData, setFormData] = useState({colourName: "", hexValue: ""}
     )
 
     function handdleChange(event) {
@@ -16,8 +17,15 @@ const Create = (props) => {
     }
 
     function handleSubmit(event) {
+        const postUrl = "http://localhost:1212/add"
         event.preventDefault()
         console.log(JSON.stringify(formData))
+        axios.post(postUrl, formData)
+            .then((response) =>
+            {
+                console.log(response)
+            }
+        ).catch(console.log)
     }
 
     return ( 
@@ -34,8 +42,8 @@ const Create = (props) => {
                             placeholder={props.isUk ? "Your Colour's Name" : "Your Color's Name"}
                             className="form-control form-control-lg"
                             onChange={handdleChange}
-                            value={formData.color}
-                            name="color"
+                            value={formData.colourName}
+                            name="colourName"
                         />
                     </div>
                     <div className="mb-3">
@@ -46,7 +54,8 @@ const Create = (props) => {
                             placeholder="#11aa2d"
                             className="form-control form-control-lg"
                             onChange={handdleChange}
-                            name="value"
+                            value={formData.hexValue}
+                            name="hexValue"
                             pattern="^(#)([0-9a-fA-F]{6})$"
                             maxLength={7}
                         />
@@ -55,6 +64,12 @@ const Create = (props) => {
                 </form>
                 </div>
             </div>
+            <div className="colour-swatch mt-4" style={{
+                                                    backgroundColor: `${formData.hexValue}`
+                                                    }}>
+                
+            </div>
+            <p>{formData.hexValue}</p>
         </div>
      );
 }

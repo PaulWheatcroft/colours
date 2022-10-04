@@ -4,13 +4,14 @@ import Colour from "./components/Colour"
 import Footer from "./components/Footer"
 import './App.css'
 import data from '../../data'
+import Api from './components/Api'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Create from './components/Create'
 import 'regenerator-runtime/runtime';
 import axios from 'axios';
 
 function App() {
-  const baseURL = "http://localhost:1212/colours";
+  const baseURL = "http://localhost:1212/colours"
   const [isUk, setIsUk] = React.useState(true)
   const [allData, setAllData] = React.useState(data)
 
