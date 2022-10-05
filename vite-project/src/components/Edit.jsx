@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import 'regenerator-runtime/runtime';
 import axios from 'axios';
+import { useLocation } from 'react-router-dom'
 
-const Create = (props) => {
-    const [formData, setFormData] = useState({colourName: "", hexValue: ""}
+export default function Edit(props) {
+    const location = useLocation()
+    const state = location.state
+    const [formData, setFormData] = useState({colourName: state.colourName, hexValue: state.hexValue, id: state.id}
     )
 
     function handdleChange(event) {
@@ -16,10 +19,10 @@ const Create = (props) => {
     }
 
     function handleSubmit(event) {
-        const postUrl = "http://localhost:1212/add"
+        const editUrl = "http://localhost:1212/edit"
         event.preventDefault()
         console.log(JSON.stringify(formData))
-        axios.post(postUrl, formData)
+        axios.patch(editUrl, formData)
             .then((response) =>
             {
                 console.log(response)
@@ -29,7 +32,7 @@ const Create = (props) => {
 
     return ( 
         <div className="create">
-            <h2>Add a New {props.isUk ? "Colour" : "Color"}</h2>
+            <h2>Edit {props.isUk ? "Colour" : "Color"}</h2>
             <div className="card">
                 <div className="card-body">
                 <form onSubmit={handleSubmit}>
@@ -68,9 +71,6 @@ const Create = (props) => {
                                                     }}>
                 
             </div>
-            <p>{formData.hexValue}</p>
         </div>
      );
 }
- 
-export default Create;

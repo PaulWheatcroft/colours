@@ -2,9 +2,9 @@ import React from 'react'
 import Nav from "./components/Nav"
 import Colour from "./components/Colour"
 import Footer from "./components/Footer"
+import Edit from './components/Edit'
 import './App.css'
 import data from '../../data'
-import Api from './components/Api'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Create from './components/Create'
 import 'regenerator-runtime/runtime';
@@ -50,6 +50,11 @@ function App() {
               <Create
                 isUk={isUk}
               />
+            </Route>
+            <Route exact path="/edit">
+              <Edit
+                isUk={isUk}
+            />
             </Route>
           </Switch>
         </div>
